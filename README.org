@@ -1,6 +1,135 @@
-* Readme
-I hear Github does org files these days
-[ ] item
-- test
-- one
-- two
+[[https://en.wikipedia.org/wiki/Org-mode][Org-mode]]  was originally built around Outlining, tracking and
+estimating. It has since ballooned in scope, but you should be able to
+get started with just the basics.
+
+https://www.youtube.com/watch?v=oJTwQvgfgMM is a google talk by
+Carsten Dominik (creator of org-mode) - the history and basics.
+
+
+*** Install
+The version of org that comes with Emacs could be old - rather install from
+a package repository first! Current version is 9.1.14.
+
+(M-x package-list-packages) should help you here. If you're completely
+new to Emacs,
+[[http://www.jesshamrick.com/2012/09/10/absolute-beginners-guide-to-emacs/]]
+is a great place to start :)
+*** Configure
+Put the contents of the attached org-init.el file into your init file,
+or somewhere in your init path. It should be self contained.
+*** Knowledge.org file
+This installation is based on having a single org file for your
+scheduling etc - called "Knowledge.org" - placed in
+"~/.emacs.d/org/TIME/Knowledge.org". If you want to change this
+scheme, you'll just need to tweak some variables in the org-mode setup code.
+*** Terms
+org has some terms. The [[https://orgmode.org/worg/org-glossary.html][full list is here]]
+Emacs also has a bunch of terms - the absolute beginners guide to
+emacs should help with those - but the basics are:
+
+| term    | Meaning (Apple keyboard)                              |
+|---------+-------------------------------------------------------|
+| M-x     | "Meta-x" - pressing "alt" and "x" at the same time    |
+| C-x     | "Cmd-x" - pressing "Ctrl" and "x" at the same time    |
+| S-x     | "SHIFT-x" - pressing "shift" and "x" at the same time |
+| s-x     | "super-x" - pressing "cmd" and "x" at the same time   |
+| <RET>   | The enter/return key                                  |
+| <right> | right key (left/down/up have the same convention)     |
+
+**** Headline                                         :tag1:tag2:noexport:
+SCHEDULED: <2018-12-04 Tue 08:00> DEADLINE: <2018-12-05 Wed 17:00>
+:PROPERTIES:
+:ID:       081B236C-17CF-4697-A2AD-2A17032B3F07
+:Effort:   5:00
+:END:
+:LOGBOOK:
+CLOCK: [2018-12-03 Mon 15:53]--[2018-12-03 Mon 16:53] =>  1:00
+CLOCK: [2018-12-04 Tue 15:53]--[2018-12-04 Tue 16:53] =>  1:00
+:END:
+
+Entry text - which could contain other entries, tables, lists etc.
+
+
+**** Entry                                                      :noexport:
+***** Headline
+***** Tag
+***** Deadline
+***** Schedule
+***** Drawer
+****** Property
+****** Logbook
+*** Outline
+For getting notes and ideas down, org is a real bonus. You can
+outline, reorder, indent/outdent and cycle visibility of
+children/content. You likely won't find a faster way to take notes,
+organise thoughts or plan.
+
+Here's a table of the basics:
+| Action               | Key Chord   |
+|----------------------+-------------|
+| Make a new entry     | M-<RET>     |
+| Indent entry         | M-<right>   |
+| Outdent entry        | M-<left>    |
+| Reorder entries      | M-<up/down> |
+| Show/hide entry/tree | TAB         |
+| Show/hide all trees  | S-TAB       |
+
+
+
+*** Estimate/check estimates
+To add estimates for how long you're going to take on an item, you hit 
+#+BEGIN_SRC text
+C-c C-x C-e
+#+END_SRC
+... and then enter your effort in hh:mm or mm format.
+
+To see cumulative estimations for estimates, hit:
+#+BEGIN_SRC text
+C-c C-x C-c
+#+END_SRC
+... to switch into "column view" mode which is handy for
+adjusting/negotiating ;)
+
+[[http://doc.norang.ca/org-mode.html#TaskEstimates]] goes into more detail.
+
+*** Track
+Estimating how long you'll take on tasks is one thing. Actually
+sticking to the estimates, another. Tracking is a good way to see how
+you perform against your anticipated timings.
+
+Basically, you just navigate to an entry and hit
+#+BEGIN_SRC text
+C-c C-x C-i
+#+END_SRC
+... to "clock in" and ...
+#+BEGIN_SRC
+C-c C-x C-o
+#+END_SRC
+... to "clock out"
+
+When you have a look again at the clock table - you'll now see
+estimated vs clocked times. Nice and simple.
+*** Schedule, Deadline, agenda
+One of the most useful aspects of org-mode, is the ability to maintain
+an "agenda view" - sort of a "todo list" combined with a diary. This
+is useful for scheduling stuff to do, and keeping track of progress.
+
+On any given day, you can check your logging history with "log mode".
+Not something you want to live your life by, but handy for
+"remembering" what you've been up to :)
+
+Commands:
+
+| Action                 | Key chord |
+|------------------------+-----------|
+| Open agenda            | C-a a     |
+| Close agenda           | q         |
+| forward a day          | f         |
+| backward               | b         |
+| go to today            | .         |
+| switch to week view    | w         |
+| switch to day view     | d         |
+| turn "Log mode" off/on | v c       |
+
+
+
