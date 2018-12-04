@@ -36,28 +36,7 @@ emacs should help with those - but the basics are:
 | <RET>   | The enter/return key                                  |
 | <right> | right key (left/down/up have the same convention)     |
 
-**** Headline                                         :tag1:tag2:noexport:
-SCHEDULED: <2018-12-04 Tue 08:00> DEADLINE: <2018-12-05 Wed 17:00>
-:PROPERTIES:
-:ID:       081B236C-17CF-4697-A2AD-2A17032B3F07
-:Effort:   5:00
-:END:
-:LOGBOOK:
-CLOCK: [2018-12-03 Mon 15:53]--[2018-12-03 Mon 16:53] =>  1:00
-CLOCK: [2018-12-04 Tue 15:53]--[2018-12-04 Tue 16:53] =>  1:00
-:END:
 
-Entry text - which could contain other entries, tables, lists etc.
-
-
-**** Entry                                                      :noexport:
-***** Headline
-***** Tag
-***** Deadline
-***** Schedule
-***** Drawer
-****** Property
-****** Logbook
 *** Outline
 For getting notes and ideas down, org is a real bonus. You can
 outline, reorder, indent/outdent and cycle visibility of
